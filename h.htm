@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zharith y luis 03-08-2022</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8e5e5;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .carta {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 90%;
+            margin: 10px auto;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carta:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-family: 'Dancing Script', cursive;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.4;
+            margin-top: 15px;
+            color: #555;
+            font-family: 'Roboto', sans-serif;
+        }
+        .firma {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #e91e63;
+            margin-top: 20px;
+        }
+        .corazon {
+            font-size: 1.5em;
+            color: #e91e63;
+            animation: latido 1s infinite;
+        }
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .sello {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            background: #e91e63;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.7em;
+            transform: rotate(-15deg);
+        }
+        .fecha {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .petalo {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: #ffc0cb;
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            animation: caida 15s linear infinite;
+        }
+        @keyframes caida {
+            0% {
+                top: -15px;
+                transform: rotate(45deg) translateX(0);
+            }
+            100% {
+                top: 100%;
+                transform: rotate(405deg) translateX(50px);
+            }
+        }
+        @media (max-width: 600px) {
+            .carta {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .firma {
+                font-size: 1.6em;  
+            }
+            .sello {
+                width: 50px;
+                height: 50px;
+                font-size: 0.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sello">Z & L</div>
+    <div class="carta">
+        <h1>💖Mi Querida Princesa💖</h1>
+        <p>
+            En cada latido de mi corazón resuena tu nombre. 💓 Eres la luz que ilumina mis días y la estrella que guía mis noches. ✨ Nuestro amor es un tesoro que valoro más que nada en este mundo. 💎
+        </p>
+        <p>
+            Contigo, cada momento es mágico, cada sonrisa es un regalo, y cada mirada es una promesa de un futuro juntos. 🌟 Te amo más allá de las palabras, más allá del tiempo, más allá de todo. 💞
+        </p>
+        <p>
+            Eres mi compañera, mi confidente, mi mejor amiga y el amor de mi vida. 👫 Gracias por ser tú, por estar a mi lado, por hacer de cada día una aventura maravillosa. 🌈
+        </p>
+        <p>
+            Si alguna vez te he fallado, te pido perdón desde lo más profundo de mi corazón. 🙏 Tu amor es mi mayor tesoro y prometo cuidarlo cada día de mi vida. 💖
+        </p>
+        <div class="corazon">❤</div>
+        <div class="firma">Con Todo Mi Amor, 💕 Zharith 💖 Luis  💕</div>
+        <div class="sello">Z & L</div>
+        <div class="fecha">💖03-08-22💖</div>
+    </div>
+    <script>
+        function crearPetalos() {
+            const numPetalos = 20;
+            for (let i = 0; i < numPetalos; i++) {
+                const petalo = document.createElement('div');
+                petalo.classList.add('petalo');
+                petalo.style.left = `${Math.random() * 100}%`;
+                petalo.style.animationDelay = `${Math.random() * 15}s`;
+                document.body.appendChild(petalo);
+            }
+        }
+        crearPetalos();
+    </script>
+</body>
+</html>
